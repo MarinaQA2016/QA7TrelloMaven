@@ -30,11 +30,11 @@ HomePageHelper homePage;
         log4j.startTestCase("loginNegativeLoginEmpty()");
         loginPage.loginNotAttlassian("",PASSWORD)
                   .pressLoginButton();
-        log4j.info("-----Test case was finished------");
+        log4j.endTestCase();
         Assert.assertEquals(loginPage.getErrorMessage(),"Missing email",
                 "The text of the error message is not correct");
     }
-
+/*
     @Test(dataProviderClass = DataProviders.class, dataProvider = "incorrectLogin")
     public void loginNegativeLoginIncorrect(String login, String password, String errorMessage)  {
         log4j.startTestCase("loginNegativeLoginIncorrect()");
@@ -44,7 +44,7 @@ HomePageHelper homePage;
         loginPage.loginNotAttlassian(login,password);
         Assert.assertEquals(loginPage.getErrorMessage(),errorMessage,
                 "The error message is not '" + errorMessage + "'");
-        log4j.info("-----Test case was finished------");
+        log4j.endTestCase2();
     }
 
     @Test(dataProviderClass = DataProviders.class, dataProvider = "dataProviderThird")
@@ -53,7 +53,7 @@ HomePageHelper homePage;
         Assert.assertEquals(loginPage.getErrorMessage(),"There isn't an account for this email",
                 "The error message is not '" + "There isn't an account for this email" + "'");
     }
-
+*/
     @Test
     public void loginNegativePasswordIncorrect()  {
         loginPage.loginAsAttlassian(LOGIN,PASSWORD+"1");

@@ -32,7 +32,12 @@ public class LogLog4j {
         Log.info("");
         Log.info("");
 
+    }
 
+    public static void endTestCase2(){
+        Log.info("***********************************************" );
+        Log.info("-----Test case was finished------");
+        Log.info("***********************************************" );
     }
 
     // Need to create these methods, so that they can be called

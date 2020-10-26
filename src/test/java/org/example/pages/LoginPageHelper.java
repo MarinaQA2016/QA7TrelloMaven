@@ -16,7 +16,7 @@ public class LoginPageHelper extends PageBase{
     @FindBy(id = "user")
     WebElement loginField;
 
-    @FindBy(id = "error")
+    @FindBy(id = "errorr")
     WebElement errorMessage;
 
     @FindBy(id = "login-error")

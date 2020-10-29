@@ -50,6 +50,16 @@ public class CurrentBoardTests extends TestBase {
         qaHafa7currentBoard.createNewList(name);
         int listsAfterAdding = qaHafa7currentBoard.getListsQuantity();
         Assert.assertEquals(listsBeforeAdding +1, listsAfterAdding,
+                "The quantity of lists is not equal to expected quantity");
+
+    }
+
+    @Test(dataProviderClass = DataProviders.class,dataProvider = "dataProviderRandomName")
+    public void createListPositive2(String name)  {
+        int listsBeforeAdding = qaHafa7currentBoard.getListsQuantity();
+        qaHafa7currentBoard.createNewList(name);
+        int listsAfterAdding = qaHafa7currentBoard.getListsQuantity();
+        Assert.assertEquals(listsBeforeAdding +1, listsAfterAdding,
                 "The quantity of lists is not equal to expected quantitty");
 
     }

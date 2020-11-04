@@ -56,7 +56,7 @@ public class CurrentBoardTests extends TestBase {
     }
 */
 
-    @Test(groups = {"smoke","regression"},dataProviderClass = DataProviders.class,dataProvider = "dataProviderRandomName")
+    @Test(groups = {"regression"},dataProviderClass = DataProviders.class,dataProvider = "dataProviderRandomName")
     public void createListPositive2(String name)  {
         int listsBeforeAdding = qaHafa7currentBoard.getListsQuantity();
         qaHafa7currentBoard.createNewList(name);

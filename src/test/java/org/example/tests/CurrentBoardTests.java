@@ -14,7 +14,7 @@ public class CurrentBoardTests extends TestBase {
     CurrentBoardPageHelper qaHafa7currentBoard;
     HomePageHelper homePage;
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void initTests()  {
         loginPage = PageFactory.initElements(driver, LoginPageHelper.class);
         boardsPage = PageFactory.initElements(driver, BoardsPageHelper.class);
@@ -31,19 +31,20 @@ public class CurrentBoardTests extends TestBase {
     }
 
 
-    @Test
+    @Test(groups = {"smoke"})
     public void isCorrectCurrentBoard(){
         Assert.assertEquals(qaHafa7currentBoard.getCurrentBoardHeader(),"QA Haifa7",
                 "The header of the screen is not 'QA Haifa7'");
     }
 
+    /*
     @Test
     public void isCorrectCurrentBoard2(){
         Assert.assertTrue(qaHafa7currentBoard.isCorrectCurrentBoard(),
                 "The header of the screen is not 'QA Haifa7'");
     }
-
-
+*/
+/*
     @Test(dataProviderClass = DataProviders.class,dataProvider = "dataProviderCreateList")
     public void createListPositive(String name)  {
         int listsBeforeAdding = qaHafa7currentBoard.getListsQuantity();
@@ -53,8 +54,9 @@ public class CurrentBoardTests extends TestBase {
                 "The quantity of lists is not equal to expected quantity");
 
     }
+*/
 
-    @Test(dataProviderClass = DataProviders.class,dataProvider = "dataProviderRandomName")
+    @Test(groups = {"smoke","regression"},dataProviderClass = DataProviders.class,dataProvider = "dataProviderRandomName")
     public void createListPositive2(String name)  {
         int listsBeforeAdding = qaHafa7currentBoard.getListsQuantity();
         qaHafa7currentBoard.createNewList(name);

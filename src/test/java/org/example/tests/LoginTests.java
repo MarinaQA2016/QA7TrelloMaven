@@ -13,7 +13,7 @@ LoginPageHelper loginPage;
 BoardsPageHelper boardsPage;
 HomePageHelper homePage;
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void initTests() {
         log4j.info("LoginTest:@BeforeMethod initTests()");
         loginPage = PageFactory.initElements(driver, LoginPageHelper.class);
@@ -54,20 +54,20 @@ HomePageHelper homePage;
                 "The error message is not '" + "There isn't an account for this email" + "'");
     }
 */
-    @Test
+    @Test(groups = {"regression"})
     public void loginNegativePasswordIncorrect()  {
         loginPage.loginAsAttlassian(LOGIN,PASSWORD+"1");
         Assert.assertTrue(loginPage.getAttlassianErrorMessage().contains("Incorrect email address and"),
                 "The error message is not contains the text 'Incorrect email address and'");
     }
-
+/*
     @Test(dataProviderClass = DataProviders.class,dataProvider = "dataProviderFirst")
     public void loginPositive(String login, String password)  {
         loginPage.loginAsAttlassian(login,password);
         boardsPage.waitUntilPageIsLoaded();
         Assert.assertTrue(boardsPage.getBoadsIconName().equals("Boards"),"The text on the button is not 'Board'");
     }
-
+*/
 
 
 }

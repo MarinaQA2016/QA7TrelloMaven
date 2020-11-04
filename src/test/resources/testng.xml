@@ -2,8 +2,15 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Tests" verbose="5">
   <test name="Test1">
+    <groups>
+      <run>
+        <include name="regression"/>
+        <exclude name="smoke"></exclude>
+      </run>
+    </groups>
     <classes>
-      <class name="org.example.tests.SampleTestNgTest"/>
+      <class name="org.example.tests.LoginTests"/>
+      <class name="org.example.tests.CurrentBoardTests"/>
     </classes>
   </test>  
 </suite>

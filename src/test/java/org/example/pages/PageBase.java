@@ -94,6 +94,14 @@ public class PageBase {
         }
     }
 
+    public void frameToBeAvailableAndSwitchToIt(WebElement iframe, int time) {
+        try {
+            new WebDriverWait(driver,time).until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(iframe));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 
     public void waitUntilElementsAreVisible(List<WebElement> elementsList, int time) {
         try {
